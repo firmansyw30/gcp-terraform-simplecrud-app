@@ -1,0 +1,7 @@
+#/project-inslope/.env
+/project-inslope/node_modules
+#/credentials/*.json
+/project-inslope/.dockerignore
+tes.txt
+/terraform/.terraform
+/terraform/.terraform.lock.hcl

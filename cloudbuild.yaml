@@ -1,0 +1,81 @@
+steps:
+  # Clone repository from Google Cloud Source Repositories (Cloud Source Repositories is deprecated for new user) to cloud build environment
+  # try to change clone command to git clone https://github.com/firmansyw30/gcp-terraform-simplecrud-app
+  - id: 'clone repo'
+    name: 'gcr.io/cloud-builders/git' 
+    entrypoint: 'bash'
+    args:
+    - '-c'
+    - |
+        git clone https://source.developers.google.com/p/prime-hologram-395812/r/final-project-firman 
+        cd final-project-firman
+
+  # Build Docker image based on cloud source repositories directory
+  - id: 'build docker image'
+    name: 'gcr.io/cloud-builders/docker'
+    dir: 'final-project-firman/project-inslope'
+    args:
+    - 'buildx'
+    - 'build'
+    - '--no-cache'
+    - '-t'
+    - 'asia-southeast2-docker.pkg.dev/prime-hologram-395812/docker-repoo-firman/docker-images-firman:${_IMAGE_TAG}'
+    - '.'
+
+  # Push Docker image to Artifact Registry based on cloud source repositories directory
+  - id: 'push docker image'
+    name: 'gcr.io/cloud-builders/docker'
+    dir: 'final-project-firman/project-inslope'
+    args: 
+    - 'push'
+    - 'asia-southeast2-docker.pkg.dev/prime-hologram-395812/docker-repoo-firman/docker-images-firman:${_IMAGE_TAG}'
+
+  # Initialize Terraform
+  - id: 'terraform init'
+    name: 'hashicorp/terraform:1.0.0'
+    dir: 'final-project-firman/terraform'
+    entrypoint: 'sh'
+    args:
+    - '-c'
+    - terraform init
+
+  # Import existing resources (import is used after the resource is created) into Terraform state, take a look to "some-project-id", "db-instance-name", "also username"
+  - id: 'terraform import'
+    name: 'hashicorp/terraform:1.0.0'
+    dir: 'final-project-firman/terraform'
+    entrypoint: 'sh'
+    args:
+    - '-c'
+    - |
+        terraform import google_sql_database_instance.instance some-project-id/db-instance-name || true
+        terraform import google_sql_database.database some-project-id/db-instance-name/database-name || true
+        terraform import google_sql_user.users some-project-id/db-instance-name/%/type-a-username || true
+        terraform import google_artifact_registry_repository.my-repo asia-southeast2/docker-repoo-firman || true
+        terraform import google_storage_bucket.sql-file-bucket sql-file-bucket-1 || true
+        terraform import google_cloud_run_v2_service.final-project-skripsi-firman projects/some-project-id/locations/asia-southeast2/services/cloudrun-inslope || true
+
+  # Terraform plan
+  - id: 'terraform plan'
+    name: 'hashicorp/terraform:1.0.0'
+    dir: 'final-project-firman/terraform'
+    entrypoint: 'sh'
+    args:
+    - '-c'
+    - terraform plan -var="image_tag=${_IMAGE_TAG}"
+
+  # Apply Terraform to update Cloud Run service, also for apply some additional infrastructure
+  - id: 'update terraform'
+    name: 'hashicorp/terraform:1.0.0'
+    dir: 'final-project-firman/terraform'
+    entrypoint: 'sh'
+    args:
+    - '-c'
+    - terraform apply -var="image_tag=${_IMAGE_TAG}" -auto-approve
+
+# Substitute environment variables in ci/cd process
+substitutions:
+  _IMAGE_TAG: "$SHORT_SHA" #$SHORT_SHA stand for the first seven characters of COMMIT_SHA
+
+# Store Log to cloud logging
+options:
+  logging: 'CLOUD_LOGGING_ONLY'

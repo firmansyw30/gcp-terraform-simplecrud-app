@@ -1,0 +1,32 @@
+<head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="/public/asset/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Ubah Artikel</title>
+    <link href="/src/output.css" rel="stylesheet">
+</head>
+
+<section class="bg-white dark:bg-gray-900">
+    <div class="py-8 px-4 mx-auto max-w-2xl lg:py-16">
+        <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Form Ubah Artikel</h2>
+        <form action="/ubahartikel/<%= artikel.id %>" method="POST">
+            <input type="hidden" name="_method" value="PUT">
+            <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
+                <div class="sm:col-span-2">
+                    <label for="judul_artikel" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Judul Artikel</label>
+                    <input type="text" name="judul_artikel" id="judul_artikel" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" value="<%= artikel.judul_artikel %>" required>
+                </div>
+                <div class="sm:col-span-2">
+                    <label for="konten" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Konten</label>
+                    <textarea id="konten" name="konten" rows="8" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"><%= artikel.konten %></textarea>
+                </div>
+            </div>
+            <button type="submit" class="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-primary-700 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800">
+                Ubah Artikel
+            </button>
+            <a href="/auth/welcome">
+                <button type="button" class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900">Kembali</button>
+            </a>
+        </form>
+    </div>
+</section>

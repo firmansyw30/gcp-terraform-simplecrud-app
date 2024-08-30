@@ -1,0 +1,40 @@
+#untuk pengujian local dengan multicontainer / development testing only
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    volumes:
+      - project-inslope-mysql-data:/var/lib/mysql
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_DATABASE: "db-project-inslope" # Menambahkan nama database yang akan dibuat
+    networks:
+      - project-inslope
+    ports:
+      - "3306:3306" # Membuka port MySQL agar bisa diakses jika diperlukan
+
+  node-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node-app
+    environment:
+      DB_HOST: mysql
+      DB_NAME: db-project-inslope # Menambahkan nama database yang digunakan
+      DB_USER: root # Username untuk koneksi ke MySQL
+      DB_PASSWORD: "" # Password (sesuai dengan environment MYSQL_ALLOW_EMPTY_PASSWORD di MySQL)
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+    networks:
+      - project-inslope
+
+networks:
+  project-inslope:
+    external: true
+
+volumes:
+  project-inslope-mysql-data:
+    external: true

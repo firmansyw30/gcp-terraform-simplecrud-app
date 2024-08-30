@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="shortcut icon" href="asset/favicon.ico">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Project Inslope</title>
+        <link href="/src/output.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <img src="asset/kop-header-inslope.png" />
+            <nav class="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
+                <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+                    <a href="/" class="flex items-center">
+                        <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">INSLOPE</span>
+                    </a>
+                    <div class="flex items-center lg:order-2">
+                        <a href="/auth/login" class="text-gray-800 dark:text-white hover:bg-gray-200 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">Login</a>
+                        <a href="#tentang" class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">Pelajari Lebih Lanjut</a>
+                        <button data-collapse-toggle="mobile-menu-2" type="button" class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu-2" aria-expanded="false">
+                            <span class="sr-only">Open main menu</span>
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                            <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                        </button>
+                    </div>
+                    <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
+                        <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+                            <li>
+                                <a href="index.ejs" class="block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white" aria-current="page">Home</a>
+                            </li>
+                            <li>
+                                <a href="#tentang" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Tentang</a>
+                            </li>
+                            <li>
+                                <a href="#fitur" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Fitur</a>
+                            </li>
+                            <li>
+                                <a href="#video" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Video</a>
+                            </li>
+                            <li>
+                                <a href="#download" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Download</a>
+                            </li>
+                            <li>
+                                <a href="#artikel" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Artikel</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        
+        <section class="bg-white dark:bg-gray-900">
+            <div
+              class="grid py-8 px-4 mx-auto max-w-screen-xl lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12"
+            >
+              <div class="place-self-center mr-auto lg:col-span-7">
+                <h1
+                  class="mb-4 max-w-2xl text-yellow-500 text-4xl font-bold leading-none md:text-5xl xl:text-6xl dark:text-white"
+                >
+                  InSlope
+                </h1>
+                <h3
+                  class="mb-4 max-w-2xl text-lg font-bold leading-none md:text-2xl xl:text-2xl dark:text-white"
+                >
+                  Sistem Informasi Manajemen Lereng
+                </h3>
+                <p
+                  class="mb-6 max-w-md font-light text-gray-500 lg:mb-7 md:text-base lg:text-lg dark:text-gray-400"
+                >
+                  Aplikasi Sistem Informasi Geografis yang dikembangkan oleh Balai
+                  Geoteknik Terowongan dan Struktur Kementerian Pekerjaan Umum dan
+                  Perumahan Rakyat.
+                </p>
+                <a
+                  href="#tentang"
+                  class="inline-flex justify-center items-center py-3 px-5 mr-3 text-base font-medium text-center text-white rounded-lg bg-yellow-500 hover:bg-primary-700 focus:ring-4 focus:ring-yellow-300 dark:focus:ring-yellow-900"
+                >
+                  Pelajari Lebih Lanjut
+                  <svg
+                    class="ml-2 -mr-1 w-5 h-5"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                </a>
+              </div>
+      
+              <div class="lg:col-span-5">
+                <div
+                  id="gallery"
+                  class="relative w-full h-full md:h-100"
+                  data-carousel="slide"
+                >
+                  <!-- Carousel wrapper -->
+                  <div class="relative h-full w-full rounded-lg overflow-hidden">
+                    <!-- Item 1 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                      <img
+                        src="asset/Screenshot (173).png"
+                        class="absolute top-0 left-0 w-full h-full object-cover"
+                        alt=""
+                      />
+                    </div>
+                    <!-- Item 2 -->
+                    <div
+                      class="hidden duration-700 ease-in-out"
+                      data-carousel-item="active"
+                    >
+                      <img
+                        src="asset/Screenshot (174).png"
+                        class="absolute top-0 left-0 w-full h-full object-cover"
+                        alt=""
+                      />
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                      <img
+                        src="asset/Screenshot (175).png"
+                        class="absolute top-0 left-0 w-full h-full object-cover"
+                        alt=""
+                      />
+                    </div>
+                    <!-- Item 4 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                      <img
+                        src="asset/Screenshot (176).png"
+                        class="absolute top-0 left-0 w-full h-full object-cover"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                  <!-- Slider controls -->
+                  <div
+                    class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                    data-carousel-prev
+                  >
+                    <span
+                      class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+                    >
+                      <svg
+                        class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 6 10"
+                      >
+                        <path
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M5 1 1 5l4 4"
+                        />
+                      </svg>
+                      <span class="sr-only">Previous</span>
+                    </span>
+                  </div>
+                  <div
+                    class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                    data-carousel-next
+                  >
+                    <span
+                      class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+                    >
+                      <svg
+                        class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 6 10"
+                      >
+                        <path
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="m1 9 4-4-4-4"
+                        />
+                      </svg>
+                      <span class="sr-only">Next</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+      
+          <!-- Tentang -->
+          <section class="bg-gray-50 dark:bg-gray-800" id="tentang">
+            <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+              <div class="mb-8 max-w-screen-lg lg:mb-16">
+                <h2
+                  class="mb-4 text-4xl font-extrabold text-gray-900 dark:text-white"
+                >
+                  Apa itu Inslope?
+                </h2>
+                <p class="text-gray-500 sm:text-lg dark:text-gray-300">
+                  INSLOPE merupakan aplikasi Sistem Informasi Geografis yang
+                  dikembangkan oleh Balai Geoteknik Terowongan Kementerian Pekerjaan
+                  Umum dan Perumahan Rakyat dengan penanganan lereng jalan yang
+                  bersifat preventif dengan mengintegrasikan :
+                </p>
+              </div>
+      
+              <div
+                class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0"
+              >
+                <div>
+                  <div
+                    class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-yellow-500 lg:h-12 lg:w-12"
+                  >
+                    <svg
+                      class="w-6 h-6 text-gray-800 dark:text-white"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M15 4h3a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3m0 3h6m-6 5h6m-6 4h6M10 3v4h4V3h-4Z"
+                      />
+                    </svg>
+                  </div>
+                  <h3 class="mb-2 text-xl font-bold dark:text-white">
+                    Sistem Manajemen Lereng Jalan
+                  </h3>
+                  <p class="text-gray-500 dark:text-gray-400">
+                    Solusi yang memungkinkan pemantauan visual dan analisis data
+                    lereng secara terintegrasi.
+                  </p>
+                </div>
+                <div>
+                  <div
+                    class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-yellow-500 lg:h-12 lg:w-12"
+                  >
+                    <svg
+                      class="w-6 h-6 text-gray-800 dark:text-white"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-width="2"
+                        d="M20 6H10m0 0a2 2 0 1 0-4 0m4 0a2 2 0 1 1-4 0m0 0H4m16 6h-2m0 0a2 2 0 1 0-4 0m4 0a2 2 0 1 1-4 0m0 0H4m16 6H10m0 0a2 2 0 1 0-4 0m4 0a2 2 0 1 1-4 0m0 0H4"
+                      />
+                    </svg>
+                  </div>
+                  <h3 class="mb-2 text-xl font-bold dark:text-white">
+                    Inventarisasi Lereng Jalan
+                  </h3>
+                  <p class="text-gray-500 dark:text-gray-400">
+                    Inventarisasi yang mencakup lereng alam dan buatan yang berpotensi
+                    runtuh, tidak terbatas pada daerah milik jalan.
+                  </p>
+                </div>
+                <div>
+                  <div
+                    class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-yellow-500 lg:h-12 lg:w-12"
+                  >
+                    <svg
+                      class="w-6 h-6 text-gray-800 dark:text-white"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="m8.032 12 1.984 1.984 4.96-4.96m4.55 5.272.893-.893a1.984 1.984 0 0 0 0-2.806l-.893-.893a1.984 1.984 0 0 1-.581-1.403V7.04a1.984 1.984 0 0 0-1.984-1.984h-1.262a1.983 1.983 0 0 1-1.403-.581l-.893-.893a1.984 1.984 0 0 0-2.806 0l-.893.893a1.984 1.984 0 0 1-1.403.581H7.04A1.984 1.984 0 0 0 5.055 7.04v1.262c0 .527-.209 1.031-.581 1.403l-.893.893a1.984 1.984 0 0 0 0 2.806l.893.893c.372.372.581.876.581 1.403v1.262a1.984 1.984 0 0 0 1.984 1.984h1.262c.527 0 1.031.209 1.403.581l.893.893a1.984 1.984 0 0 0 2.806 0l.893-.893a1.985 1.985 0 0 1 1.403-.581h1.262a1.984 1.984 0 0 0 1.984-1.984V15.7c0-.527.209-1.031.581-1.403Z"
+                      />
+                    </svg>
+                  </div>
+                  <h3 class="mb-2 text-xl font-bold dark:text-white">
+                    Inspeksi Lereng Jalan
+                  </h3>
+                  <p class="text-gray-500 dark:text-gray-400">
+                    Melalui inspeksi, potensi bahaya dapat diidentifikasi sedini
+                    mungkin dan tindakan pencegahan yang tepat dapat diambil.
+                  </p>
+                </div>
+                <div>
+                  <div
+                    class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-yellow-500 lg:h-12 lg:w-12"
+                  >
+                    <svg
+                      class="w-6 h-6 text-gray-800 dark:text-white"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M8 17.345a4.76 4.76 0 0 0 2.558 1.618c2.274.589 4.512-.446 4.999-2.31.487-1.866-1.273-3.9-3.546-4.49-2.273-.59-4.034-2.623-3.547-4.488.486-1.865 2.724-2.899 4.998-2.31.982.236 1.87.793 2.538 1.592m-3.879 12.171V21m0-18v2.2"
+                      />
+                    </svg>
+                  </div>
+                  <h3 class="mb-2 text-xl font-bold dark:text-white">
+                    Cost Program Lereng Jalan
+                  </h3>
+                  <p class="text-gray-500 dark:text-gray-400">
+                    Sistem dengan pemantauan keuangan yang baik untuk mengontrol dan
+                    melacak pengeluaran terkait manajemen lereng.
+                  </p>
+                </div>
+                <div>
+                  <div
+                    class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-yellow-500 lg:h-12 lg:w-12"
+                  >
+                    <svg
+                      class="w-6 h-6 text-gray-800 dark:text-white"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M10 11h2v5m-2 0h4m-2.592-8.5h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                      />
+                    </svg>
+                  </div>
+                  <h3 class="mb-2 text-xl font-bold dark:text-white">
+                    Pemeliharaan Lereng Jalan Berdasarkan Resiko
+                  </h3>
+                  <p class="text-gray-500 dark:text-gray-400">
+                    Pemeliharaan lereng jalan berdasarkan resiko merupakan langkah
+                    krusial dalam menjaga keselamatan pengguna jalan dan
+                    infrastruktur.
+                  </p>
+                </div>
+                <div>
+                  <div
+                    class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-yellow-500 lg:h-12 lg:w-12"
+                  >
+                    <svg
+                      class="w-6 h-6 text-gray-800 dark:text-white"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M10.779 17.779 4.36 19.918 6.5 13.5m4.279 4.279 8.364-8.643a3.027 3.027 0 0 0-2.14-5.165 3.03 3.03 0 0 0-2.14.886L6.5 13.5m4.279 4.279L6.499 13.5m2.14 2.14 6.213-6.504M12.75 7.04 17 11.28"
+                      />
+                    </svg>
+                  </div>
+                  <h3 class="mb-2 text-xl font-bold dark:text-white">
+                    Penilaian Resiko Lereng Jalan
+                  </h3>
+                  <p class="text-gray-500 dark:text-gray-400">
+                    Melalui penilaian risiko, potensi bahaya dapat diidentifikasi dan
+                    diprioritaskan untuk pengambilan tindakan pencegahan yang tepat.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="items-center">
+              <p
+                class="font-semibold text-gray-500 underline dark:text-gray-400 decoration-indigo-500 text-center"
+              >
+                Penggunaan Aplikasi INSLOPE telah menjadi prosedur baku dalam
+                melakukan survei pengumpulan data kondisi jaringan jalan
+              </p>
+              <a
+                href="https://binamarga.pu.go.id/index.php/nspk/detail/pedoman-survei-pengumpulan-data-kondisi-jaringan-jalan"
+              >
+                <p
+                  class="text-gray-500 font-bold text-lg dark:text-gray-300 text-center"
+                >
+                  (SE Dirjen Bina Marga No. 01/SE/DB/2021)
+                </p>
+              </a>
+            </div>
+          </section>
+      
+          <!--Fitur-->
+          <section class="bg-white dark:bg-gray-900" id="fitur">
+            <div
+              class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6"
+            >
+              <div class="font-light text-gray-500 sm:text-lg dark:text-gray-400">
+                <h2
+                  class="mb-4 text-4xl font-extrabold text-gray-900 dark:text-white"
+                >
+                  Fitur Aplikasi Inslope
+                </h2>
+                <p class="mb-4">
+                  Aplikasi Inslope Mobile memiliki fitur utama yaitu melakukan pendataan
+                  inventarisasi serta inspeksi keadaan jalan berdasarkan resiko
+                </p>
+              </div>
+              <div class="grid grid-cols-2 gap-4 mt-8">
+                <img
+                  class="w-full rounded-lg"
+                  src="../asset/asset-3.webp"
+                  alt="office content 1"
+                />
+                <img
+                  class="mt-4 w-full rounded-lg lg:mt-10"
+                  src="../asset/asset-2.webp"
+                  alt="office content 2"
+                />
+              </div>
+            </div>
+          </section>
+      
+          <!--Video-->
+          <section id="video" class="bg-gray-50 dark:bg-gray-900 dark:bg-gray-800">
+            <div
+              class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6 flex justify-center items-center"
+            >
+              <div
+                class="max-w-screen-lg text-gray-500 sm:text-lg dark:text-gray-400 text-center"
+              >
+                <h2 class="mb-4 text-4xl font-bold text-gray-900 dark:text-white">
+                  Video Inslope
+                </h2>
+                <iframe
+                  width="400"
+                  height="400"
+                  src="https://www.youtube.com/embed/RsLue3WiLgY"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+          </section>
+      
+          <!--Download-->
+          <section class="bg-white dark:bg-gray-900" id="download">
+            <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+              <div
+                class="mx-auto max-w-screen-sm text-center flex flex-col items-center"
+              >
+                <h2
+                  class="mb-4 text-4xl font-extrabold leading-tight text-gray-900 dark:text-white"
+                >
+                  Download Aplikasi Inslope
+                </h2>
+                <p
+                  class="mb-6 font-light text-gray-500 dark:text-gray-400 md:text-lg"
+                >
+                  Aplikasi Inslope dapat didownload di Playstore atau diakses melalui
+                  website berikut
+                </p>
+                <div class="flex items-center justify-center space-x-4">
+                  <a
+                    href="https://play.google.com/store/apps/details?id=com.binamarga.inslope.demo"
+                  >
+                    <img
+                      src="./asset/get-google-play.png"
+                      alt="Download from Google Play Store"
+                      class="mx-auto mb-4 max-w-50"
+                    />
+                  </a>
+                  <a href="https://inslope.binamarga.pu.go.id/">
+                    <img
+                      src="./asset/logo_inslope_web-removebg-preview.png"
+                      alt="Logo Inslope"
+                      class="mx-auto mb-4 max-w-50"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+<!--Artikel-->
+<section class="bg-gray-50 dark:bg-gray-900 dark:bg-gray-800" id="artikel">
+      <aside aria-label="Related articles" class="py-8 lg:py-24 bg-gray-50 dark:bg-gray-800">
+        <div class="px-4 mx-auto max-w-screen-xl">
+          <div class="mx-auto max-w-screen-sm text-center lg:mb-16 mb-8">
+            <h2 class="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Artikel</h2>
+            <!--<p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">Balai Geoteknik, Terowongan, dan Struktur</p> -->
+            <p class="font-semibold text-gray-500 sm:text-sm dark:text-gray-400">(Konten yang ditampilkan merupakan konten dummy untuk demonstrasi CRUD)</p>
+          </div>
+          <% if (artikel.length === 0) { %> <!-- Cek jika tidak ada artikel -->
+            <div class="font-light text-gray-500 sm:text-lg dark:text-gray-400 text-center">
+              <h2 class="mb-4 text-4xl font-extrabold text-gray-900 dark:text-white">
+                Data Artikel Kosong
+              </h2>
+            </div>
+          <% } else { %>            
+              <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
+                <% artikel.forEach((item) => { %>
+                    <article class="max-w-xs">
+                        <a href="#">
+                            <img src="https://i.ibb.co.com/kgMXKHN/article.png" class="mb-5 rounded-lg max-w-xs" alt="Image 1">
+                        </a>                
+                        <h2 class="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
+                          <%= item.judul_artikel %>
+                        </h2>
+                        <p class="mb-4 text-gray-500 dark:text-gray-400"><%= item.konten %></p>
+                        <p class="mb-4 text-gray-500 dark:text-gray-400">Tanggal Post : <%= item.tanggal_post %></p>
+                        <p class="mb-4 text-gray-500 dark:text-gray-400">Tanggal Diperbarui : <%= item.updatedAt %></p>
+                    </article>
+                <% }) %>
+              </div>
+            <% } %>
+        </div>
+        
+        </div>
+      </aside>   
+  </div>
+</section>
+
+<!--Footer-->
+<footer class="p-4 bg-gray-50 sm:p-6 bg-white dark:bg-gray-900">
+  <div class="mx-auto max-w-screen-xl">
+    <div class="md:flex md:justify-between">
+      <div class="mb-6 md:mb-0">
+        <p
+          class="self-center text-lg font-semibold whitespace-nowrap dark:text-white"
+        >
+          Kementerian Pekerjaan Umum dan Perumahan Rakyat
+        </p>
+        <p
+          class="self-center text-md font-light whitespace-nowrap dark:text-white"
+        >
+          Direktorat Jenderal Bina Marga
+        </p>
+        <p
+          class="self-center text-md font-light whitespace-nowrap dark:text-white"
+        >
+          Direktorat Bina Teknik Jalan dan Jembatan
+        </p>
+        <p
+          class="self-center text-md font-light whitespace-nowrap dark-text-white"
+        >
+          Balai Geoteknik, Terowongan dan Struktur
+        </p>
+        <br />
+        <p class="text-sm font-light dark-text-white">
+          Jalan A. H. Nasution 264 Kec. Arcamanik Kota Bandung, Jawa Barat
+          40294.
+        </p>
+        <p class="text-sm font-light dark-text-white">
+          Telp. (022) 7834487
+        </p>
+      </div>
+
+      <div class="flex col-span-4">
+        <ul
+          class="pl-4 max-w-md space-y-1 list-inside dark:text-gray-400"
+        >
+          <span
+            class="self-center text-lg font-semibold whitespace-nowrap dark:text-white"
+            >Link Terkait</span
+          >
+          <li>
+            <a
+              href="https://pu.go.id/"
+              class="hover:underline text-gray-600 text-sm dark:text-gray-400"
+              >Kementerian PUPR</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://binamarga.pu.go.id/"
+              class="hover:underline text-gray-600 text-sm dark:text-gray-400"
+              >Direktorat Jenderal Bina Marga </a
+            >
+          </li>
+          <li>
+            <a
+              href="https://binamarga.pu.go.id/balai-sj/"
+              class="hover:underline text-gray-600 text-sm dark:text-gray-400"
+              >Balai Jembatan</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://binamarga.pu.go.id/balai-gts/"
+              class="hover:underline text-gray-600 text-sm dark:text-gray-400"
+              >Balai Geoteknik, Terowongan, dan Struktur</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://binamarga.pu.go.id/aplikasi"
+              class="hover:underline text-gray-600 text-sm dark:text-gray-400"
+              >Daftar Aplikasi Kementerian Pekerjaan Umum dan Perumahan
+              Rakyat</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!--Social Media Link-->
+    <br
+      class="my-6 border-gray-200 sm:mx-auto dark:border-gray-400 lg:my-8"
+    />
+    <br>
+    <div class="sm:flex sm:items-center sm:justify-between">
+      <span class="text-lg font-semibold text-left dark:text-gray-400"
+        >Sosial Media</span
+      >
+      <div class="md:flex md:justify-between">
+        <div class="flex mt-4 items-center sm:justify-center sm:mt-0">
+          <div class="flex flex-col items-center">
+            <div class="flex justify-end">
+              <a
+                href="https://www.instagram.com/pupr_bm_bgts/"
+                class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+              >
+                <svg
+                  class="w-6 h-6 text-gray-800 dark:text-white mr-2"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.779-6.979-6.98-1.282-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://www.binamarga.pu.go.id/bgts"
+                class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+              >
+                <svg
+                  class="w-6 h-6 text-gray-800 dark:text-white mr-2"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M8.64 4.737A7.97 7.97 0 0 1 12 4a7.997 7.997 0 0 1 6.933 4.006h-.738c-.65 0-1.177.25-1.177.9 0 .33 0 2.04-2.026 2.008-1.972 0-1.972-1.732-1.972-2.008 0-1.429-.787-1.65-1.752-1.923-.374-.105-.774-.218-1.166-.411-1.004-.497-1.347-1.183-1.461-1.835ZM6 4a10.06 10.06 0 0 0-2.812 3.27A9.956 9.956 0 0 0 2 12c0 5.289 4.106 9.619 9.304 9.976l.054.004a10.12 10.12 0 0 0 1.155.007h.002a10.024 10.024 0 0 0 1.5-.19 9.925 9.925 0 0 0 2.259-.754 10.041 10.041 0 0 0 4.987-5.263A9.917 9.917 0 0 0 22 12a10.025 10.025 0 0 0-.315-2.5A10.001 10.001 0 0 0 12 2a9.964 9.964 0 0 0-6 2Zm13.372 11.113a2.575 2.575 0 0 0-.75-.112h-.217A3.405 3.405 0 0 0 15 18.405v1.014a8.027 8.027 0 0 0 4.372-4.307ZM12.114 20H12A8 8 0 0 1 5.1 7.95c.95.541 1.421 1.537 1.835 2.415.209.441.403.853.637 1.162.54.712 1.063 1.019 1.591 1.328.52.305 1.047.613 1.6 1.316 1.44 1.825 1.419 4.366 1.35 5.828Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://api.whatsapp.com/send?phone=081120201675"
+                class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  version="1.1"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 256 256"
+                  xml:space="preserve"
+                  class="mr-2"
+                >
+                  <g
+                    style="
+                      stroke: none;
+                      stroke-width: 0;
+                      stroke-dasharray: none;
+                      stroke-linecap: butt;
+                      stroke-linejoin: miter;
+                      stroke-miterlimit: 10;
+                      fill: none;
+                      fill-rule: nonzero;
+                      opacity: 1;
+                    "
+                    transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)"
+                  >
+                    <path
+                      d="M 76.735 13.079 C 68.315 4.649 57.117 0.005 45.187 0 C 20.605 0 0.599 20.005 0.589 44.594 c -0.003 7.86 2.05 15.532 5.953 22.296 L 0.215 90 l 23.642 -6.202 c 6.514 3.553 13.848 5.426 21.312 5.428 h 0.018 c 0.001 0 -0.001 0 0 0 c 24.579 0 44.587 -20.007 44.597 -44.597 C 89.789 32.713 85.155 21.509 76.735 13.079 z M 27.076 46.217 c -0.557 -0.744 -4.55 -6.042 -4.55 -11.527 c 0 -5.485 2.879 -8.181 3.9 -9.296 c 1.021 -1.115 2.229 -1.394 2.972 -1.394 s 1.487 0.007 2.136 0.039 c 0.684 0.035 1.603 -0.26 2.507 1.913 c 0.929 2.231 3.157 7.717 3.436 8.274 c 0.279 0.558 0.464 1.208 0.093 1.952 c -0.371 0.743 -0.557 1.208 -1.114 1.859 c -0.557 0.651 -1.17 1.453 -1.672 1.952 c -0.558 0.556 -1.139 1.159 -0.489 2.274 c 0.65 1.116 2.886 4.765 6.199 7.72 c 4.256 3.797 7.847 4.973 8.961 5.531 c 1.114 0.558 1.764 0.465 2.414 -0.279 c 0.65 -0.744 2.786 -3.254 3.529 -4.369 c 0.743 -1.115 1.486 -0.929 2.507 -0.558 c 1.022 0.372 6.5 3.068 7.614 3.625 c 1.114 0.558 1.857 0.837 2.136 1.302 c 0.279 0.465 0.279 2.696 -0.65 5.299 c -0.929 2.603 -5.381 4.979 -7.522 5.298 c -1.92 0.287 -4.349 0.407 -7.019 -0.442 c -1.618 -0.513 -3.694 -1.199 -6.353 -2.347 C 34.934 58.216 27.634 46.961 27.076 46.217 z"
+                      style="
+                        stroke: none;
+                        stroke-width: 1;
+                        stroke-dasharray: none;
+                        stroke-linecap: butt;
+                        stroke-linejoin: miter;
+                        stroke-miterlimit: 10;
+                        fill: rgb(0, 0, 0);
+                        fill-rule: evenodd;
+                        opacity: 1;
+                      "
+                      transform=" matrix(1 0 0 1 0 0) "
+                      stroke-linecap="round"
+                    />
+                  </g>
+                </svg>
+              </a>
+              <a
+                href="https://www.youtube.com/watch?v=bPXtmCmzXbE&pp=ygURaW5zbG9wZSBiaW5hbWFyZ2E%3D"
+                class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+              >
+                <svg
+                  class="w-6 h-6 text-gray-800 dark:text-white mr-2"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M21.7 8.037a4.26 4.26 0 0 0-.789-1.964 2.84 2.84 0 0 0-1.984-.839c-2.767-.2-6.926-.2-6.926-.2s-4.157 0-6.928.2a2.836 2.836 0 0 0-1.983.839 4.225 4.225 0 0 0-.79 1.965 30.146 30.146 0 0 0-.2 3.206v1.5a30.12 30.12 0 0 0 .2 3.206c.094.712.364 1.39.784 1.972.604.536 1.38.837 2.187.848 1.583.151 6.731.2 6.731.2s4.161 0 6.928-.2a2.844 2.844 0 0 0 1.985-.84 4.27 4.27 0 0 0 .787-1.965 30.12 30.12 0 0 0 .2-3.206v-1.516a30.672 30.672 0 0 0-.202-3.206Zm-11.692 6.554v-5.62l5.4 2.819-5.4 2.801Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </a>
+              <a
+                href="mailto:layanan.bgts@gmail.com"
+                class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+              >
+                <svg
+                  class="w-6 h-6 text-gray-800 dark:text-white"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M2.038 5.61A2.01 2.01 0 0 0 2 6v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6c0-.12-.01-.238-.03-.352l-.866.65-7.89 6.032a2 2 0 0 1-2.429 0L2.884 6.288l-.846-.677Z"
+                  />
+                  <path
+                    d="M20.677 4.117A1.996 1.996 0 0 0 20 4H4c-.225 0-.44.037-.642.105l.758.607L12 10.742 19.9 4.7l.777-.583Z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--My Profile-->
+    <hr
+      class="my-6 border-gray-200 sm:mx-auto dark:border-gray-500 lg:my-8 bg-gray dark:bg-gray-500"
+    />
+    <div class="sm:flex sm:items-center sm:justify-center">
+      <span class="text-sm font-semibold text-center dark:text-gray-400"
+        >© 2024 | 
+        <a href="https://www.linkedin.com/in/firmansyah-wicaksono/" class="hover:underline"
+          >Firmansyah Wicaksono</a>  | All Right Reserved </span
+      >
+    </div>
+  </div>
+</footer>
+    <script src="/node_modules/flowbite/dist/flowbite.min.js"></script>        
+    </body>
+</html>
